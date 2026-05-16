@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    background: linear-gradient(180deg, #1a1714 0%, #2d2823 50%, #1f1b17 100%);
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  .text-shadow-soft {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .card {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl;
+  }
+
+  .btn-primary {
+    @apply px-8 py-3 bg-warm-500 hover:bg-warm-400 text-ink-950 font-medium
+           rounded-full transition-all duration-300
+           active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .option-card {
+    @apply w-full p-4 text-left border border-white/10 rounded-xl
+           transition-all duration-200 cursor-pointer
+           hover:border-spring-400/50 hover:bg-spring-400/5
+           active:scale-[0.98];
+  }
+
+  .option-card.selected {
+    @apply border-spring-400/60 bg-spring-400/10;
+  }
+}
